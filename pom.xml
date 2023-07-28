@@ -6,7 +6,8 @@
 
   <groupId>io.wmartinmimi.github</groupId>
   <artifactId>browserlauncher4j</artifactId>
-  <version>1.0</version>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
 
   <name>browserlauncher4j</name>
   <description>
@@ -18,6 +19,7 @@
     <license>
       <name>MIT License</name>
       <url>https://opensource.org/license/mit/</url>
+      <distribution>repo</distribution>
     </license>
   </licenses>
   <developers>
@@ -29,7 +31,7 @@
   <scm>
     <connection>scm:git:git@github.com:wmartinmimi/browserlaunch4j.git</connection>
     <developerConnection>scm:git:ssh://github.com:wmartinmimi/browserlaunch4j.git</developerConnection>
-    <url>https://github.com/wmartinmimi/browserlaunch4j/tree/master</url>
+    <url>https://github.com/wmartinmimi/browserlaunch4j</url>
   </scm>
   <dependencies>
     <dependency>
@@ -126,10 +128,6 @@
           <version>3.1.1</version>
         </plugin>
         <plugin>
-          <artifactId>maven-deploy-plugin</artifactId>
-          <version>3.1.1</version>
-        </plugin>
-        <plugin>
           <artifactId>maven-site-plugin</artifactId>
           <version>3.12.1</version>
         </plugin>
@@ -140,7 +138,7 @@
         <plugin>
           <groupId>org.sonatype.plugins</groupId>
           <artifactId>nexus-staging-maven-plugin</artifactId>
-          <version>1.6.13</version>
+          <version>1.6.8</version>
           <extensions>true</extensions>
           <configuration>
             <serverId>ossrh</serverId>

@@ -1,5 +1,6 @@
-package io.wmartinmimi.github.browserlauncher4j;
+package io.wmartinmimi.github.browserlauncher4j.test;
 
+import io.wmartinmimi.github.browserlauncher4j.BrowserLauncher;
 import org.junit.jupiter.api.Test;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -11,13 +12,19 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class BrowserLauncherTest {
 
     @Test
+    public void recommendedUsage() throws URISyntaxException {
+        BrowserLauncher.launch(new URI("https://example.com"));
+    }
+
+    @Test
     public void asyncTest() throws URISyntaxException, ExecutionException, InterruptedException {
-        CompletableFuture<Boolean> future = BrowserLauncher.launch(new URI("https://example.com"));
-        assertTrue(future.get());
+        CompletableFuture<Boolean> launchSuccessFuture = BrowserLauncher.launch(new URI("https://example.com"));
+        assertTrue(launchSuccessFuture.get());
     }
 
     @Test
     public void blockingTest() throws URISyntaxException{
-        assertTrue(BrowserLauncher.launchBlocking(new URI("https://example.com")));
+        boolean launchSuccess = BrowserLauncher.launchBlocking(new URI("https://example.com"));
+        assertTrue(launchSuccess);
     }
 }

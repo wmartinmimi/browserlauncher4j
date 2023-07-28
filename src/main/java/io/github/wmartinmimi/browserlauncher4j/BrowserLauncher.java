@@ -1,4 +1,4 @@
-package io.wmartinmimi.github.browserlauncher4j;
+package io.github.wmartinmimi.browserlauncher4j;
 
 import java.awt.Desktop;
 import java.io.IOException;

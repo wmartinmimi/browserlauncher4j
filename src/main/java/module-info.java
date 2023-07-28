@@ -1,4 +1,4 @@
-module io.wmartinmimi.github.browserlauncher4j {
+module io.github.wmartinmimi.browserlauncher4j {
     requires java.desktop;
-    exports io.wmartinmimi.github.browserlauncher4j;
+    exports io.github.wmartinmimi.browserlauncher4j;
 }

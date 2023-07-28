@@ -1,6 +1,6 @@
-package io.wmartinmimi.github.browserlauncher4j.test;
+package io.github.wmartinmimi.browserlauncher4j.test;
 
-import io.wmartinmimi.github.browserlauncher4j.BrowserLauncher;
+import io.github.wmartinmimi.browserlauncher4j.BrowserLauncher;
 import org.junit.jupiter.api.Test;
 import java.net.URI;
 import java.net.URISyntaxException;

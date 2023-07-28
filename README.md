@@ -12,7 +12,8 @@ Webpage: [https://wmartinmimi.github.io/projects/browserlauncher4j/](https://wma
 ```java
 package com.example;
 
-import io.wmartinmimi.github.browserlauncher4j.BrowserLauncher;
+import io.github.wmartinmimi.browserlauncher4j.BrowserLauncher;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 

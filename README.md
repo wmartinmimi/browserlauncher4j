@@ -19,12 +19,44 @@ import java.net.URISyntaxException;
 
 public class BrowserLauncherTest {
     public static void main(String[] args) throws URISyntaxException {
-        BrowserLauncher.launch(new URI("https://example.com"));
+        BrowserLauncher.launchBlocking(new URI("https://example.com"));
     }
 }
 ```
 
 For more examples see [BrowserLauncherTest](src/test/java/io/wmartinmimi/github/browserlauncher4j/test/BrowserLauncherTest.java)
+
+## Add as dependency
+
+### Maven pom.xml
+
+```xml
+<dependency>
+    <groupId>io.github.wmartinmimi</groupId>
+    <artifactId>browserlauncher4j</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+### Gradle
+
+```groovy
+implementation group: 'io.github.wmartinmimi', name: 'browserlauncher4j', version: '1.0.0'
+```
+
+### Gradle (short)
+
+```groovy
+implementation 'io.github.wmartinmimi:browserlauncher4j:1.0.0'
+```
+
+### Gradle (kotlin)
+
+```kotlin
+implementation("io.github.wmartinmimi:browserlauncher4j:1.0.0")
+```
+
+For other build systems see [here](https://central.sonatype.com/artifact/io.github.wmartinmimi/browserlauncher4j/1.0.0).
 
 ## License
 

@@ -58,6 +58,20 @@ implementation("io.github.wmartinmimi:browserlauncher4j:1.0.0")
 
 For other build systems see [here](https://central.sonatype.com/artifact/io.github.wmartinmimi/browserlauncher4j/1.0.0).
 
+## Running and testing
+
+### For library testing
+
+```shell
+mvn test
+```
+
+### For installing to local maven repository
+
+```shell
+mvn clean install
+```
+
 ## License
 
 Licensed under ```MIT License```.

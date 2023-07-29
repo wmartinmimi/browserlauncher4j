@@ -8,23 +8,45 @@ import java.util.concurrent.Executor;
 
 /**
  * A browser launcher to open an url in a default browser.
+ * @see BrowserLauncher#launch(URI)
+ * @see BrowserLauncher#launch(URI, Executor)
+ * @see BrowserLauncher#launchBlocking(URI)
+ * @since 1.0.0
+ * @version 1.0.1
  */
 public class BrowserLauncher {
 
     /**
-     * Launches the specified url in the default browser concurrently using the specified executor.
+     * Launches the specified url in the default browser concurrently using the specified {@link Executor}.
+     * <pre>{@code
+     * Executor executor = Executors.newSingleThreadExecutor();
+     * CompletableFuture<Boolean> launchSuccessFuture = BrowserLauncher.launch(new URI("https://example.com"), executor);
+     * }</pre>
      * @param uri containing the url to launch
      * @param executor the executor to use by CompletableFuture.supplyAsync()
-     * @return CompletableFuture&lt;Boolean&gt;, where true indicates the url launch was successful
+     * @return {@code CompletableFuture<Boolean>}, where {@code true} indicates the url launch was successful
+     * @see BrowserLauncher#launch(URI)
+     * @see BrowserLauncher#launchBlocking(URI)
+     * @see CompletableFuture
+     * @see Executor
+     * @since 1.0.0
      */
     public static CompletableFuture<Boolean> launch(URI uri, Executor executor) {
         return CompletableFuture.supplyAsync(() -> launchBlocking(uri), executor);
     }
 
     /**
-     * Launches the specified url in the default browser concurrently using default executor for CompletableFuture.
+     * Launches the specified url in the default browser concurrently using default executor for {@link CompletableFuture}.
+     * <pre>{@code
+     * // example code
+     * CompletableFuture<Boolean> launchSuccessFuture = BrowserLauncher.launch(new URI("https://example.com"));
+     * }</pre>
      * @param uri containing the url to launch
-     * @return CompletableFuture&lt;Boolean&gt;, where true indicates the url launch was successful
+     * @return {@code CompletableFuture<Boolean>}, where {@code true} indicates the url launch was successful
+     * @see BrowserLauncher#launch(URI, Executor)
+     * @see BrowserLauncher#launchBlocking(URI)
+     * @see CompletableFuture
+     * @since 1.0.0
      */
     public static CompletableFuture<Boolean> launch(URI uri) {
         return CompletableFuture.supplyAsync(() -> launchBlocking(uri));
@@ -32,8 +54,15 @@ public class BrowserLauncher {
 
     /**
      * Launches the specified url in the default browser as a blocking operation.
+     * <pre>{@code
+     * // example code
+     * boolean launchSuccess = BrowserLauncher.launchBlocking(new URI("https://example.com"));
+     * }</pre>
      * @param uri containing the url to launch
-     * @return boolean, where true indicates the url launch was successful
+     * @return {@code boolean}, where {@code true} indicates the url launch was successful
+     * @see BrowserLauncher#launch(URI)
+     * @see BrowserLauncher#launch(URI, Executor)
+     * @since 1.0.0
      */
     public static boolean launchBlocking(URI uri) {
         if (launchWithAWTDesktop(uri)) return true;
@@ -41,9 +70,11 @@ public class BrowserLauncher {
     }
 
     /**
-     * Launches the browser using java.awt.Desktop.
+     * Launches the browser using {@link Desktop}.
      * @param uri the url to be launched
-     * @return boolean, where true indicates the url launch was successful
+     * @return {@code boolean}, where {@code true} indicates the url launch was successful
+     * @see Desktop#browse(URI)
+     * @since 1.0.0
      */
     private static boolean launchWithAWTDesktop(URI uri) {
         try {
@@ -57,7 +88,8 @@ public class BrowserLauncher {
     /**
      * Launches the browser using xdg-open.
      * @param uri the url to be launched
-     * @return boolean, where true indicates the url launch was successful
+     * @return {@code boolean}, where {@code true} indicates the url launch was successful
+     * @since 1.0.0
      */
     private static boolean launchWithXDGOpen(URI uri) {
         try {

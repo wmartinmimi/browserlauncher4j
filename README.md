@@ -34,26 +34,26 @@ For more examples see [BrowserLauncherTest](src/test/java/io/wmartinmimi/github/
 <dependency>
     <groupId>io.github.wmartinmimi</groupId>
     <artifactId>browserlauncher4j</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
 ### Gradle
 
 ```groovy
-implementation group: 'io.github.wmartinmimi', name: 'browserlauncher4j', version: '1.0.0'
+implementation group: 'io.github.wmartinmimi', name: 'browserlauncher4j', version: '1.0.1'
 ```
 
 ### Gradle (short)
 
 ```groovy
-implementation 'io.github.wmartinmimi:browserlauncher4j:1.0.0'
+implementation 'io.github.wmartinmimi:browserlauncher4j:1.0.1'
 ```
 
 ### Gradle (kotlin)
 
 ```kotlin
-implementation("io.github.wmartinmimi:browserlauncher4j:1.0.0")
+implementation("io.github.wmartinmimi:browserlauncher4j:1.0.1")
 ```
 
 For other build systems see [here](https://central.sonatype.com/artifact/io.github.wmartinmimi/browserlauncher4j/1.0.0).
